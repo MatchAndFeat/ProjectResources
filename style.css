@@ -9220,3 +9220,23 @@ fieldset:disabled .btn {
 .testimonials .testimonial-item {
     max-width: 18rem;
 }
+
+.media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: center;
+}
+.media-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+#new_user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

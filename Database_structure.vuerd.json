@@ -3,9 +3,9 @@
     "version": "2.2.10",
     "width": 3000,
     "height": 3000,
-    "scrollTop": -711,
+    "scrollTop": -758,
     "scrollLeft": -531,
-    "zoomLevel": 0.8,
+    "zoomLevel": 0.7,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -17,7 +17,7 @@
       "columnNotNull": true,
       "relationship": true
     },
-    "database": "MySQL",
+    "database": "PostgreSQL",
     "databaseName": "match & feat",
     "canvasType": "ERD",
     "language": "GraphQL",
@@ -505,7 +505,7 @@
           "active": false,
           "left": 1189.3326,
           "top": 1336.7506,
-          "zIndex": 157,
+          "zIndex": 209,
           "widthName": 60,
           "widthComment": 60,
           "color": "#607D8B"
@@ -704,9 +704,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 834.0835,
-          "top": 1012.5841,
-          "zIndex": 133,
+          "left": 835.7502,
+          "top": 1040.9176,
+          "zIndex": 207,
           "widthName": 60,
           "widthComment": 60,
           "color": "#607D8B"
@@ -905,7 +905,7 @@
       },
       {
         "name": "likes",
-        "comment": "",
+        "comment": "Read note below",
         "columns": [
           {
             "name": "like_id",
@@ -931,8 +931,31 @@
             "id": "8c3f1cca-2e89-403f-9730-b0e16d4991f6"
           },
           {
-            "name": "project_id",
-            "comment": "",
+            "name": "likeable_id",
+            "comment": "POLYMORPHISM",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 63.4326171875,
+              "widthComment": 107.21875,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "503fc8bd-a2c2-4113-ad60-bd52fadbfde5"
+          },
+          {
+            "name": "likeable_type",
+            "comment": "POLYMORPHISM",
             "dataType": "bigint",
             "default": "",
             "option": {
@@ -944,10 +967,10 @@
             "ui": {
               "active": false,
               "pk": false,
-              "fk": true,
+              "fk": false,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
+              "widthName": 77.88623046875,
+              "widthComment": 107.21875,
               "widthDataType": 60,
               "widthDefault": 60
             },
@@ -978,7 +1001,7 @@
           },
           {
             "name": "feat_id",
-            "comment": "",
+            "comment": "ONLY FOR ERD DISPLAY",
             "dataType": "bigint",
             "default": "",
             "option": {
@@ -993,20 +1016,43 @@
               "fk": true,
               "pfk": false,
               "widthName": 60,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "7a8e1878-aedd-4d49-b628-f9c5bf545c4b"
+            "id": "26a15ea0-c14b-4522-904a-4553b2af619e"
+          },
+          {
+            "name": "project_id",
+            "comment": "ONLY FOR ERD DISPLAY",
+            "dataType": "bigint",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 120,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "7b448c57-25c3-4a35-a2f5-18926db3860c"
           }
         ],
         "ui": {
           "active": false,
-          "left": 1697.1672,
-          "top": 875,
-          "zIndex": 41,
+          "left": 1638.4172,
+          "top": 857.5,
+          "zIndex": 290,
           "widthName": 60,
-          "widthComment": 60,
+          "widthComment": 99.56982421875,
           "color": "#FF9800"
         },
         "visible": true,
@@ -1306,9 +1352,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1964.2385,
-          "top": 1331.1424,
-          "zIndex": 134,
+          "left": 1962.5718,
+          "top": 1394.4758,
+          "zIndex": 171,
           "widthName": 145.7998046875,
           "widthComment": 60,
           "color": "#FF9800"
@@ -1320,7 +1366,20 @@
     "indexes": []
   },
   "memo": {
-    "memos": []
+    "memos": [
+      {
+        "value": "There is a polymorphic association between likes on one side and feats and projects on the other side.\nBe careful while creating the likes table !!\nhttps://guides.rubyonrails.org/association_basics.html#polymorphic-associations\n",
+        "ui": {
+          "active": false,
+          "left": 1690.9722222222208,
+          "top": 1055.1111111111109,
+          "zIndex": 291,
+          "width": 293,
+          "height": 106
+        },
+        "id": "573ad7a5-9ac0-4de8-9359-92c67c1144fb"
+      }
+    ]
   },
   "relationship": {
     "relationships": [
@@ -1407,32 +1466,6 @@
         "relationshipType": "OneN",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "c293f728-bbaa-42b0-9174-b1a96ff156dd",
-          "columnIds": [
-            "a8a9cb94-fdda-4005-b3d8-f483cb353f2f"
-          ],
-          "x": 1295.067707421875,
-          "y": 1336.7506,
-          "direction": "top"
-        },
-        "end": {
-          "tableId": "0f557560-e634-47a1-aafb-2bc1e9acf386",
-          "columnIds": [
-            "00073f58-4e4f-452b-aab1-ed08db06bbd6"
-          ],
-          "x": 1697.1672,
-          "y": 1000.8333333333335,
-          "direction": "left"
-        },
-        "constraintName": "fk_projects_to_likes",
-        "visible": true,
-        "id": "e0e4bb30-bf61-47c9-998e-7bc606e473e5"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
-        "start": {
           "tableId": "9d7d4c6e-13f8-4d0d-95d2-9281b5cc457a",
           "columnIds": [
             "40582c5c-c6b5-4de4-a7d8-8457109b2d1e"
@@ -1446,8 +1479,8 @@
           "columnIds": [
             "6dffd078-f5fe-436b-b58c-92f525351785"
           ],
-          "x": 1042.30371484375,
-          "y": 1012.5841,
+          "x": 1043.97041484375,
+          "y": 1040.9176,
           "direction": "top"
         },
         "constraintName": "fk_users_to_feats",
@@ -1472,8 +1505,8 @@
           "columnIds": [
             "ce2ae91a-c8b8-4eca-bd5c-1acae8e0e644"
           ],
-          "x": 1042.30371484375,
-          "y": 1245.5841,
+          "x": 1043.97041484375,
+          "y": 1273.9176,
           "direction": "bottom"
         },
         "constraintName": "fk_projects_to_feats",
@@ -1524,39 +1557,13 @@
           "columnIds": [
             "84ade581-e860-4a73-a6f7-674dc59d5590"
           ],
-          "x": 1697.1672,
-          "y": 900.1666666666667,
+          "x": 1638.4172,
+          "y": 889.5,
           "direction": "left"
         },
         "constraintName": "fk_users_to_likes",
         "visible": true,
         "id": "75281f2f-5d40-4821-bff0-47458c51d5e2"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "5dc439a0-6e97-48e3-b71b-fbc60fd3132b",
-          "columnIds": [
-            "c8bc88a2-be5a-4a54-8a7d-dac3d782e7a2"
-          ],
-          "x": 1250.5239296875,
-          "y": 1129.0841,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "0f557560-e634-47a1-aafb-2bc1e9acf386",
-          "columnIds": [
-            "7a8e1878-aedd-4d49-b628-f9c5bf545c4b"
-          ],
-          "x": 1697.1672,
-          "y": 950.5000000000001,
-          "direction": "left"
-        },
-        "constraintName": "fk_feats_to_likes",
-        "visible": true,
-        "id": "5d685089-e44b-47e9-a441-1c52c7b7d91e"
       },
       {
         "identification": false,
@@ -1593,8 +1600,8 @@
           "columnIds": [
             "c8bc88a2-be5a-4a54-8a7d-dac3d782e7a2"
           ],
-          "x": 834.0835,
-          "y": 1129.0841,
+          "x": 835.7502,
+          "y": 1157.4176,
           "direction": "left"
         },
         "end": {
@@ -1654,8 +1661,8 @@
           "columnIds": [
             "2c938a9d-7f59-4a98-9d8a-566f335f0b23"
           ],
-          "x": 1964.2385,
-          "y": 1386.1424,
+          "x": 1962.5718,
+          "y": 1449.4758,
           "direction": "left"
         },
         "constraintName": "fk_projects_to_join_table_projects_skills",
@@ -1680,13 +1687,65 @@
           "columnIds": [
             "a41681d6-a016-407a-aec7-f863774ee360"
           ],
-          "x": 2137.7385,
-          "y": 1331.1424,
+          "x": 2136.0717999999997,
+          "y": 1394.4758,
           "direction": "top"
         },
         "constraintName": "fk_skills_to_join_table_projects_skills",
         "visible": true,
         "id": "e41804fe-7e4e-4446-975c-7000b30cfcc8"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "5dc439a0-6e97-48e3-b71b-fbc60fd3132b",
+          "columnIds": [
+            "c8bc88a2-be5a-4a54-8a7d-dac3d782e7a2"
+          ],
+          "x": 1252.1906296875,
+          "y": 1157.4176,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "0f557560-e634-47a1-aafb-2bc1e9acf386",
+          "columnIds": [
+            "26a15ea0-c14b-4522-904a-4553b2af619e"
+          ],
+          "x": 1638.4172,
+          "y": 953.5,
+          "direction": "left"
+        },
+        "constraintName": "fk_feats_to_likes",
+        "visible": true,
+        "id": "bda905e9-619d-403e-99c3-06dddb720b23"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "c293f728-bbaa-42b0-9174-b1a96ff156dd",
+          "columnIds": [
+            "a8a9cb94-fdda-4005-b3d8-f483cb353f2f"
+          ],
+          "x": 1295.067707421875,
+          "y": 1336.7506,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "0f557560-e634-47a1-aafb-2bc1e9acf386",
+          "columnIds": [
+            "7b448c57-25c3-4a35-a2f5-18926db3860c"
+          ],
+          "x": 1638.4172,
+          "y": 1017.5,
+          "direction": "left"
+        },
+        "constraintName": "fk_projects_to_likes",
+        "visible": true,
+        "id": "4fcc26e5-8f98-440d-9769-281f2756a415"
       }
     ]
   }
